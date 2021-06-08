@@ -1,9 +1,9 @@
-import pdb
+# import pdb
 
 
 def divisors(num):
 	divisors = []
-	pdb.set_trace()
+	# pdb.set_trace()
 	for i in range(1, num + 1):
 		if num % i == 1:
 			divisors.append(i)
@@ -11,9 +11,13 @@ def divisors(num):
 
 
 def main():
-	num = int(input('Ingresa un número: '))
-	print(divisors(num))
-	print('Terminó el programa.')
+	try:
+		num = int(input('Ingresa un número: '))
+		print(divisors(num))
+	except ValueError:
+		print('Debes ingresar un número.')
+	finally:
+		print('Terminó el programa.')
 
 
 if __name__ == '__main__':
