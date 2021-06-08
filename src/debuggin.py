@@ -3,11 +3,18 @@
 
 def divisors(num):
 	divisors = []
-	# pdb.set_trace()
-	for i in range(1, num + 1):
-		if num % i == 1:
-			divisors.append(i)
-	return divisors
+	try:
+		if num < 0:
+			raise ValueError('El número solo puede ser un número positivo.')
+	except ValueError as ve:
+		print(ve)
+	else:
+		# pdb.set_trace()
+		for i in range(1, num + 1):
+			if num % i == 0:
+				divisors.append(i)
+	finally:
+		return divisors
 
 
 def main():
